@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Máy tính</title>
+</head>
+<body>
+    <form>
+        <h2>Máy tính</h2>
+        <input type="text" size="20" id="firstnumber">
+        <input type="text" size="20" id="secondnumber">  
+    </form>
+    <p>
+        <button onclick="phep_cong()">Phép cộng (+)</button>
+        <button onclick="phep_tru()">Phép trừ (-)</button>
+        <button onclick="phep_nhan()">Phép nhân (x)</button>
+        <button onclick="phep_chia()" >Phép chia (/)</button>  
+    </p>
+    <P id="ketqua"></P> 
+</body>
+</html>
+<script>        
+    function phep_cong() {
+        var so_dau_tien = document.getElementById("firstnumber").value;
+        var a = Number(so_dau_tien);
+        var so_thu_hai = document.getElementById("secondnumber").value;
+        var b = Number(so_thu_hai);
+        var phep_cong = a + b;
+        var ketqua = document.getElementById("ketqua");
+        ketqua.innerHTML = "Kết quả phép cộng: " + phep_cong;
+    }
+    function phep_tru() {
+        var so_dau_tien = document.getElementById("firstnumber").value;
+        var a = Number(so_dau_tien);
+        var so_thu_hai = document.getElementById("secondnumber").value;
+        var b = Number(so_thu_hai);
+        var phep_tru = a - b;
+        var ketqua = document.getElementById("ketqua");
+        ketqua.innerHTML = "Kết quả phép trừ: " + phep_tru;
+    }
+    function phep_nhan() {
+        var so_dau_tien = document.getElementById("firstnumber").value;
+        var a = Number(so_dau_tien);
+        var so_thu_hai = document.getElementById("secondnumber").value;
+        var b = Number(so_thu_hai);
+        var phep_nhan = a * b;
+        var ketqua = document.getElementById("ketqua");
+        ketqua.innerHTML = "Kết quả phép nhân: " + phep_nhan;
+    }
+    function phep_chia() {
+        var so_dau_tien = document.getElementById("firstnumber").value;
+        var a = Number(so_dau_tien);
+        var so_thu_hai = document.getElementById("secondnumber").value;
+        var b = Number(so_thu_hai);
+        var phep_chia = a / b;
+        var ketqua = document.getElementById("ketqua");
+        ketqua.innerHTML = "Kết quả phép chia: " + phep_chia;
+    }
+</script>
