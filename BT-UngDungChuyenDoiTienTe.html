@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <form>
+        <h2>Chuyển đổi tiền tệ</h2>
+        Số lượng: <input type="text" size="15" id="soluong"><br><br>
+        Từ: <select name="" id="abc">
+            <option value="VND">Vietnam</option>
+            <option value="USD">Đô-la Mỹ</option>
+        </select>
+        Sang: <select name="" id="def">
+            <option value="VND">Vietnam</option>
+            <option value="USD">Đô-la Mỹ</option>
+        </select>
+    </form><br>
+    <button onclick="chuyendoi()">Chuyển đổi</button> 
+    <p id="ketqua"></p>
+</body>
+</html>
+<script>
+    function chuyendoi() {
+        var soluong = parseFloat(document.getElementById("soluong").value);
+        var abc = document.getElementById("abc").value;
+        var def = document.getElementById("def").value;
+        var change;
+        var ketqua = document.getElementById("ketqua");
+
+        if(abc == "VND" && def == "USD") {
+            change = soluong / 23000;
+        } else if(abc == "VND" && def == "VND") {
+            change = soluong;
+        }
+        
+        if(abc == "USD" && def == "VND") {
+            change = soluong * 23000;
+        } else if(abc == "USD" && def == "USD") {
+            change = soluong;
+        }
+        ketqua.innerHTML = "Số tiền: " + change
+    }
+
+
+</script>
