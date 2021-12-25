@@ -9,53 +9,40 @@
 <body>
     <form>
         <h2>Máy tính</h2>
-        <input type="text" size="20" id="firstnumber">
-        <input type="text" size="20" id="secondnumber">  
+        <input type="text" size="15" id="abc">
+        <input type="text" size="15" id="def"><br><br> 
     </form>
-    <p>
-        <button onclick="phep_cong()">Phép cộng (+)</button>
-        <button onclick="phep_tru()">Phép trừ (-)</button>
-        <button onclick="phep_nhan()">Phép nhân (x)</button>
-        <button onclick="phep_chia()" >Phép chia (/)</button>  
-    </p>
-    <P id="ketqua"></P> 
+    <button onclick="phep_cong()">Phép cộng (+)</button>
+    <button onclick="phep_tru()">Phép trừ (-)</button>
+    <button onclick="phep_nhan()">Phép nhân (x)</button>
+    <button onclick="phep_chia()" >Phép chia (/)</button><br>
+    <P id="ketqua">Kết quả:</P>
 </body>
 </html>
 <script>        
     function phep_cong() {
-        var so_dau_tien = document.getElementById("firstnumber").value;
-        var a = Number(so_dau_tien);
-        var so_thu_hai = document.getElementById("secondnumber").value;
-        var b = Number(so_thu_hai);
-        var phep_cong = a + b;
-        var ketqua = document.getElementById("ketqua");
-        ketqua.innerHTML = "Kết quả phép cộng: " + phep_cong;
+        var so_dau_tien = parseFloat(document.getElementById("abc").value);
+        var so_thu_hai = parseFloat(document.getElementById("def").value);
+        var phep_cong = so_dau_tien + so_thu_hai;
+        document.getElementById("ketqua").innerHTML = "Kết quả: " + phep_cong;
     }
     function phep_tru() {
-        var so_dau_tien = document.getElementById("firstnumber").value;
-        var a = Number(so_dau_tien);
-        var so_thu_hai = document.getElementById("secondnumber").value;
-        var b = Number(so_thu_hai);
-        var phep_tru = a - b;
-        var ketqua = document.getElementById("ketqua");
-        ketqua.innerHTML = "Kết quả phép trừ: " + phep_tru;
+        var so_dau_tien = parseFloat(document.getElementById("abc").value);
+        var so_thu_hai = parseFloat(document.getElementById("def").value);
+        var phep_tru = so_dau_tien - so_thu_hai;
+        document.getElementById("ketqua").innerHTML = "Kết quả: " + phep_tru;
     }
     function phep_nhan() {
-        var so_dau_tien = document.getElementById("firstnumber").value;
-        var a = Number(so_dau_tien);
-        var so_thu_hai = document.getElementById("secondnumber").value;
-        var b = Number(so_thu_hai);
-        var phep_nhan = a * b;
-        var ketqua = document.getElementById("ketqua");
-        ketqua.innerHTML = "Kết quả phép nhân: " + phep_nhan;
+        var so_dau_tien = parseFloat(document.getElementById("abc").value);
+        var so_thu_hai = parseFloat(document.getElementById("def").value);
+        var phep_nhan = so_dau_tien * so_thu_hai;
+        document.getElementById("ketqua").innerHTML = "Kết quả: " + phep_nhan;
     }
     function phep_chia() {
-        var so_dau_tien = document.getElementById("firstnumber").value;
-        var a = Number(so_dau_tien);
-        var so_thu_hai = document.getElementById("secondnumber").value;
-        var b = Number(so_thu_hai);
-        var phep_chia = a / b;
-        var ketqua = document.getElementById("ketqua");
-        ketqua.innerHTML = "Kết quả phép chia: " + phep_chia;
+        var so_dau_tien = parseFloat(document.getElementById("abc").value);
+        var so_thu_hai = parseFloat(document.getElementById("def").value);
+        var phep_chia = so_dau_tien / so_thu_hai;
+        document.getElementById("ketqua").innerHTML = "Kết quả: " + phep_chia;
     }
+
 </script>
