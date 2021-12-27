@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số chẵn</title>
+</head>
+<body>
+    
+    <h3>Kiểm tra số chẵn</h3>
+    Nhập số:<input type="text" size="12" id="abc"><br><br>
+    <button type="button" onclick="kiemtra()">Kiểm tra</button>
+    <p id="hienthi"></p>
+</body>
+</html>
+<script>
+    function kiemtra() {
+        let kiemtra = parseInt(document.getElementById("abc").value);
+        let hienthi = document.getElementById("hienthi");
+        if (kiemtra % 2 == 0) {
+            hienthi.innerHTML = kiemtra + " là số chẵn";
+        } else {
+            hienthi.innerHTML = kiemtra + " không phải là số chẵn";
+        }
+    }
+</script>
