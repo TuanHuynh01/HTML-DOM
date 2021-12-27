@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <h3>Bảng tính chỉ số BMI</h3>
+    Nhập cân nặng:<input type="text" id="abc"><br><br>
+    Nhập chiều cao:<input type="text" id="def"><br><br>
+    <button onclick=ketqua()>Kết quả</button>
+    <p id="ghi"></p>
+</body>
+</html>
+<script>
+    function ketqua() {
+        let cannang = parseFloat(document.getElementById("abc").value);
+        let chieucao = parseFloat(document.getElementById("def").value);
+        let BMI = cannang / (chieucao^2);
+        let ketqua = ""
+        if (BMI > 40 ) {
+            ketqua = "Béo độ III";
+        } else if (BMI >= 35) {
+            ketqua = "Béo độ II";
+        } else if (BMI >= 30) {
+            ketqua = "Béo độ I";
+        } else if (BMI >= 25) {
+            ketqua = "Thừa cân";
+        } else if (BMI > 18.5) {
+            ketqua = "Bình thường";
+        } else if (BMI > 17) {
+            ketqua = "Gầy độ I";
+        } else if (BMI > 16) {
+            ketqua = "Gầy độ II";
+        } else {
+            ketqua = "Gầy độ III";
+        }
+        console.log(ketqua)
+        document.getElementById("ghi").innerHTML = "<h1>" + ketqua + "</h1>"
+    }
+</script>
